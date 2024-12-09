@@ -9,7 +9,7 @@ from datetime import datetime
 @app.route('/')       
 def hello():
     today = datetime.today().date().day
-    song = 13%13 + 1
+    song = today%13 + 1
     info = {"tag": today, "song": f"../static/audio/{song}.mp3"}
     return render_template("index.html", info=info)
   
